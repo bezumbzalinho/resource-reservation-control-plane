@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta name="keywords" content="reserva,polo,sala,funcionario">
+    <meta name="author" content="Gon&ccedil;alo Augusto,Paulo Gondar,Bernardo Melo,Mara Lopes">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--<meta name="theme-color" content="#000000" />-->
+    <meta
+      name="description"
+      content="Site para a gestão de reservas de salas para reuniões - Softinsa"
+    />  
+    <link rel="shortcut icon" href="http://estgv19503.ddns.net:3001/apple-touch-icon.png">
+    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="%PUBLIC_URL%/plugins/fontawesome-free/css/all.min.css"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/dist/css/adminlte.min.css" />
+
+    
+    <style>
+      li.set-border-top {
+        margin-top: 2px;
+      }
+    </style>
+   <title>Softinsa</title>
+  </head>
+
+  <body class="hold-transition sidebar-mini layout-navbar-fixed layout-fixed">
+    
+    <div id="root"></div>
+    
+
+    <!-- jQuery -->
+    <script src="%PUBLIC_URL%/plugins/jquery/jquery.min.js" defer></script>
+  <!-- Bootstrap 4 -->
+  <script src="%PUBLIC_URL%/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <!-- AdminLTE App -->
+  <script src="%PUBLIC_URL%/dist/js/adminlte.min.js" defer></script>
+  <script>
+
+    
+    const body = document.body;
+
+      const observer = new ResizeObserver((entries) => {
+        const NavItems = document.getElementsByClassName("nav-item")
+	const bodyElement = entries[0];
+        const IsSmallEnough = bodyElement.contentRect.width <= 990;
+         if(IsSmallEnough){
+      
+           for(let i = 2; i<NavItems.length; i++)
+           {
+             if(i!= 3 && i!=6 && i!=10){
+               NavItems[i].setAttribute("data-widget","pushmenu")
+             }
+           }
+         }
+         else{
+           for (let i = 2; i < NavItems.length; i++) {
+             if (i != 3 && i != 6 && i != 10) {
+               NavItems[i].removeAttribute("data-widget")
+             }
+           }
+         }
+      });
+      observer.observe(body);
+  </script>
+  </body>
+</html>
