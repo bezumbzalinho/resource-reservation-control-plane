@@ -29,7 +29,6 @@ resource-reservation-control-plane/
 ```bash
 # 1. Start the Backend API
 cd backend
-cp .env.example .env
 npm install
 npx sequelize-cli db:migrate
 npm start
